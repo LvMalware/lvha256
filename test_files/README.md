@@ -1,6 +1,6 @@
-#Examples
+# Examples
 
-This directory conatins example files for test purposes.
+This directory contains example files for test purposes.
 
 The output of each file should be as these on the table below.
  
