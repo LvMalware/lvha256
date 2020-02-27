@@ -1,4 +1,2 @@
-clean:
-    rm -vrf ./~*
 all:
-    gcc -o lvha256sum test.c lvha256.c
+	gcc -o lvha256sum main.c lvha256.c

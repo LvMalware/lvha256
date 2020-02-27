@@ -7,7 +7,7 @@ The output of each file should be as these on the table below.
 |  FILE NAME   |                      LVHA256 SUM                                 |
 |--------------|------------------------------------------------------------------|
 |              |                                                                  |
-| input_file.1 | b87eafed77dfef6fbb7476b57efdfeaf55ffffc17ffeebfc1d6c8850ddfe3fbe |
-| input_file.2 | 5dbdffc2ebf5fe5c814192befb3eafba9ab2cded7de797bf11a1be9deebd2bdb |
-| input_file.3 | 5793cbf4dfe6a67a6f4267dd2bdffdd3e6ffadcfbdffdfd8adcae3defffec9d5 |
-| input_file.4 | ddbc9dfdf5dffbd30b4eda9eadf3fbdbe7e4bb7cffbffa73f3bc4665bdfdacd5 |
+| input_file.1 | a021bb7deffff8ffe0368ab784efbb66783c3ff7f3f3faf9b467be89f9ffb5fd |
+| input_file.2 | 67a63bb95e735dff63a1264ea2f75dff97feddddf3c5bff2b32c8e0edf75559f |
+| input_file.3 | ebea60f8b1f2dea2af52320aaeefdbf56359fda777b57ff902f14847d7ebd39b |
+| input_file.4 | bd58ceafffdd7a7b8bede7544b77ab5bff76329dd7ff35ffc35c692c5b7e7fdf |
