@@ -13,10 +13,10 @@ real application where the security is essencial (or any application at all).
     Usage: lvha256sum [ -s <text> ] <filename>
 
     Example: $ ./lvha256sum test_files/input_file.1
-             a021bb7deffff8ffe0368ab784efbb66783c3ff7f3f3faf9b467be89f9ffb5fd
+             5bfab80dc769ce5fce29262229aeaf146f4c617018d6b828928563b5b293c1df
 
-             $ ./lvha256sum -s hello
-             fb37665ffe1fefef28e0c7c4bfafeb3f68fdf8bffdbb2ff2eb0e1e459f7ff71f
+             $ ./lvha256sum -s lvha256
+             4df2937651f5ee8708cda114140d1be417004594f49bdf2e6c90445a981a5611
 
 ## Author
 

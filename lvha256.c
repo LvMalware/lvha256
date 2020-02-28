@@ -128,7 +128,7 @@ update_context(context_t *context, const uint8_t *input_block)
          */
         uint32_t K = A % (i * 1 + 2) + B % (i * 2 + 3) + C % (i * 3 + 5) +
                      D % (i * 4 + 2) + E % (i * 5 + 3) + F % (i * 6 + 5) +
-                     G % (i * 7 + 2) + H % (i * 8 + 3) + A % (i * 9 + 5);
+                     G % (i * 7 + 2) + H % (i * 8 + 3);
 
         int o = K % 2;
         int j = (3 * i + 1) % 8;
@@ -154,14 +154,14 @@ update_context(context_t *context, const uint8_t *input_block)
         At the end, we add everyting into the context, performing more bit-wise
         operations.
      */
-    context->A = R(context->A + W(A, B, C, D, E, F, G, H), 2) & 0xFFFFFFFF;
-    context->B = L(context->B + X(B, C, D, E, F, G, H, A), 3) & 0xFFFFFFFF;
-    context->C = R(context->C + Y(C, D, E, F, G, H, A, B), 5) & 0xFFFFFFFF;
-    context->D = L(context->D + Z(D, E, F, G, H, A, B, C), 7) & 0xFFFFFFFF;
-    context->E = R(context->E + W(E, F, G, H, A, B, C, D), 11) & 0xFFFFFFFF;
-    context->F = L(context->F + X(F, G, H, A, B, C, D, E), 13) & 0xFFFFFFFF;
-    context->G = R(context->G + Y(G, H, A, B, C, D, E, F), 17) & 0xFFFFFFFF;
-    context->H = L(context->H + Z(H, A, B, C, D, E, F, G), 19) & 0xFFFFFFFF;
+    context->A = R(context->A + A, 7)  & 0xFFFFFFFF;
+    context->B = L(context->B + B, 5)  & 0xFFFFFFFF;
+    context->C = R(context->C + C, 3)  & 0xFFFFFFFF;
+    context->D = L(context->D + D, 2)  & 0xFFFFFFFF;
+    context->E = R(context->E + E, 19) & 0xFFFFFFFF;
+    context->F = L(context->F + F, 17) & 0xFFFFFFFF;
+    context->G = R(context->G + G, 13) & 0xFFFFFFFF;
+    context->H = L(context->H + H, 11) & 0xFFFFFFFF;
 }
 
 uint8_t *
