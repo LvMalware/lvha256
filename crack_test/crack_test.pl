@@ -9,7 +9,7 @@ use vars qw ( $VERSION );
 
 $VERSION = "2020.0228.1030";
 
-#Try a brute froce attack on a given hashing using the given password list
+#Try a brute force attack on a given hash using the given password list
 
 my $wordlist = '/usr/share/dict/words';
 my $version;
@@ -41,6 +41,7 @@ Usage: crack_test.pl [options(s)] <hash0> <hash1> ... <hashN>
 -v, --version   show program's version number and exit.
 -h, --help      show this help message and exit.
 -w, --wordlist  specify an wordlist to read passwords from
+                if no wordlist is specified, it will use /usr/share/dict/words
 -s, --silent    don't output status messages
 -i, --input     specify a file to read the hashes from
 
@@ -94,8 +95,9 @@ sub crack_hash
     print "[+] Reading passwords from $wordlist\n\n" unless $silent;
     open(my $words, "< :encoding(UTF-8)", $wordlist)
         || die "$0: can't open $wordlist for reading: $!";
-    while (chomp(my $password = <$words>))
+    while (my $password = <$words>)
     {
+        chomp($password);
         print "[+] Trying:  $password\n" unless $silent;
         my $pwd = quotemeta($password);
         chomp(my $pw_hash = `./lvha256sum -s $pwd`);
@@ -106,4 +108,5 @@ sub crack_hash
         }
     }
     close $words;
+    undef;
 }
