@@ -2,7 +2,7 @@
 > The LV Hashing Algorithm
 
 
-This is a hashing algorithm of 256 bits, created by myself, as an exercise.
+This is a hashing algorithm of 256 bits, created by myself as an exercise, using the Merkle-Damgård construction.
 It was not audited yet, so the security can't be guaranted. Don't use it for a
 real application where the security is essencial (or any application at all).
 
